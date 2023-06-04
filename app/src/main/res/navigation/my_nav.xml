@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@+id/navigation_home">
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.trainingdiary.HomeFragment"
+        android:label="Дневник"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_addWorkoutFragment"
+            app:destination="@id/addWorkoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_results"
+        android:name="com.example.trainingdiary.ResultsFragment"
+        android:label="Результаты"
+        tools:layout="@layout/fragment_results" >
+        <action
+            android:id="@+id/action_navigation_results_to_setBodyParams"
+            app:destination="@id/setBodyParams" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.trainingdiary.SettingsFragment"
+        android:label="Настройки"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/navigation_exercises"
+        android:name="com.example.trainingdiary.ExercisesFragment"
+        android:label="Упражнения"
+        tools:layout="@layout/fragment_exercises" />
+    <fragment
+        android:id="@+id/addWorkoutFragment"
+        android:name="com.example.trainingdiary.AddWorkoutFragment"
+        android:label="fragment_add_workout"
+        tools:layout="@layout/fragment_add_workout" />
+    <fragment
+        android:id="@+id/setBodyParams"
+        android:name="com.example.trainingdiary.SetBodyParams"
+        android:label="fragment_set_body_params"
+        tools:layout="@layout/fragment_set_body_params" />
+</navigation>
