@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="none"
-    tools:context=".ResultsFragment">
+    tools:context=".ui.results_fragment.ResultsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,13 +13,13 @@
 
 
         <TextView
-            android:id="@+id/tvWeight"
+            android:id="@+id/tvScale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:drawablePadding="8dp"
             android:gravity="center"
-            android:text="@string/weight"
+            android:text="@string/scales"
             android:textSize="20sp"
             android:textStyle="bold"
             app:drawableStartCompat="@drawable/weight"
@@ -35,7 +35,7 @@
             app:cardElevation="10dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvWeight">
+            app:layout_constraintTop_toBottomOf="@id/tvScale">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,13 +48,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Вес"
+                    android:text="@string/weight"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/ivWeight3"
+                    android:id="@+id/tvWeight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -69,10 +69,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Рост"
+                    android:text="@string/height"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ivWeight3" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvWeight" />
 
                 <TextView
                     android:id="@+id/tvHeight"
@@ -90,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Процент жира"
+                    android:text="@string/fatPercentage"
                     android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -102,6 +102,7 @@
                     android:layout_margin="8dp"
                     android:text="@string/space"
                     android:textSize="15sp"
+                    android:maxLength="5"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/FatHelper" />
@@ -111,7 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Записать"
+                    android:text="@string/record"
                     android:textAllCaps="false"
                     android:textSize="15sp"
                     app:cornerRadius="20dp"
@@ -129,12 +130,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:drawableStart="@drawable/rulers"
             android:drawablePadding="8dp"
             android:gravity="center"
-            android:text="Замеры"
+            android:text="@string/Measurements"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:drawableStartCompat="@drawable/rulers"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/materialCardWeight" />
 
@@ -160,7 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Шея"
+                    android:text="@string/neck"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -181,7 +182,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Спина"
+                    android:text="@string/back"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/neck" />
@@ -198,17 +199,17 @@
                     app:layout_constraintTop_toBottomOf="@id/backTitle" />
 
                 <TextView
-                    android:id="@+id/breastTitle"
+                    android:id="@+id/breastsTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Грудь"
+                    android:text="@string/chest"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/back" />
 
                 <TextView
-                    android:id="@+id/breast"
+                    android:id="@+id/breasts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -216,17 +217,17 @@
                     android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/breastTitle" />
+                    app:layout_constraintTop_toBottomOf="@id/breastsTitle" />
 
                 <TextView
                     android:id="@+id/waistTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Талия"
+                    android:text="@string/waist"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/breast" />
+                    app:layout_constraintTop_toBottomOf="@id/breasts" />
 
                 <TextView
                     android:id="@+id/waist"
@@ -244,7 +245,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Живот"
+                    android:text="@string/belly"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/waist" />
@@ -265,7 +266,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Предплечье"
+                    android:text="@string/forearm"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/belly" />
@@ -299,12 +300,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Измерить"
+                    android:text="@string/measure"
                     android:textAllCaps="false"
                     android:textSize="15sp"
                     app:cornerRadius="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/forearmLeft"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -316,12 +318,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:drawableStart="@drawable/statistics"
             android:drawablePadding="8dp"
             android:gravity="center"
-            android:text="Статистика"
+            android:text="@string/statistics"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:drawableStartCompat="@drawable/statistics"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/materialCardRuler" />
 
@@ -347,7 +349,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Тренировочные недели"
+                    android:text="@string/trainingWeeks"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -369,7 +371,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Тренировочные дни"
+                    android:text="@string/trainingDays"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/trainingWeeksTitle" />
@@ -390,7 +392,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Тренировочные часы"
+                    android:text="@string/trainingHours"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/trainingDaysTitle" />
@@ -411,7 +413,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Тренировки"
+                    android:text="@string/trainings"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/trainingHoursTitle" />
@@ -428,17 +430,17 @@
                     app:layout_constraintTop_toBottomOf="@id/trainingHours" />
 
                 <TextView
-                    android:id="@+id/valuesTitle"
+                    android:id="@+id/volumeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Объем, кг"
+                    android:text="@string/volume"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/trainingsTitle" />
 
                 <TextView
-                    android:id="@+id/values"
+                    android:id="@+id/volume"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"

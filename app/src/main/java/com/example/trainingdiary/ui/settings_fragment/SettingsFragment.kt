@@ -1,4 +1,4 @@
-package com.example.trainingdiary
+package com.example.trainingdiary.ui.settings_fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.trainingdiary.databinding.FragmentSettingsBinding
+import com.example.trainingdiary.ui.base_fragment.BaseFragment
 
 
 class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {

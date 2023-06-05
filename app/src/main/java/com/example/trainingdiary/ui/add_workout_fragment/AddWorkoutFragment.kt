@@ -1,12 +1,11 @@
-package com.example.trainingdiary
+package com.example.trainingdiary.ui.add_workout_fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.trainingdiary.ui.base_fragment.BaseFragment
 import com.example.trainingdiary.databinding.FragmentAddWorkoutBinding
-import com.example.trainingdiary.databinding.FragmentHomeBinding
 
 
 class AddWorkoutFragment : BaseFragment<FragmentAddWorkoutBinding>() {

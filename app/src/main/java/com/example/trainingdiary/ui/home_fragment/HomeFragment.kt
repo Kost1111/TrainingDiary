@@ -1,12 +1,12 @@
-package com.example.trainingdiary
+package com.example.trainingdiary.ui.home_fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import androidx.viewpager2.widget.ViewPager2
+import com.example.trainingdiary.ui.bottom_sheet_fragment.BottomSheetFragment
 import com.example.trainingdiary.databinding.FragmentHomeBinding
+import com.example.trainingdiary.ui.base_fragment.BaseFragment
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -21,8 +21,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     + (month + 1) + "-" + year)
             val bundle = Bundle()
             bundle.putString("addWorkout",date)
-            Navigation.findNavController(binding.root).navigate(R.id.action_navigation_home_to_addWorkoutFragment,bundle)
+            BottomSheetFragment().show(requireFragmentManager(), "tag")
         }
     }
-
 }

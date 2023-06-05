@@ -1,4 +1,4 @@
-package com.example.trainingdiary
+package com.example.trainingdiary.ui.base_fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

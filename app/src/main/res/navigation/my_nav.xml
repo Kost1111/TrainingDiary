@@ -6,7 +6,7 @@
     app:startDestination="@+id/navigation_home">
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.trainingdiary.HomeFragment"
+        android:name="com.example.trainingdiary.ui.home_fragment.HomeFragment"
         android:label="Дневник"
         tools:layout="@layout/fragment_home" >
         <action
@@ -15,31 +15,39 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_results"
-        android:name="com.example.trainingdiary.ResultsFragment"
+        android:name="com.example.trainingdiary.ui.results_fragment.ResultsFragment"
         android:label="Результаты"
         tools:layout="@layout/fragment_results" >
         <action
             android:id="@+id/action_navigation_results_to_setBodyParams"
-            app:destination="@id/setBodyParams" />
+            app:destination="@id/setBodyParams"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.trainingdiary.SettingsFragment"
+        android:name="com.example.trainingdiary.ui.settings_fragment.SettingsFragment"
         android:label="Настройки"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/navigation_exercises"
-        android:name="com.example.trainingdiary.ExercisesFragment"
+        android:name="com.example.trainingdiary.ui.exercises_fragment.ExercisesFragment"
         android:label="Упражнения"
         tools:layout="@layout/fragment_exercises" />
     <fragment
         android:id="@+id/addWorkoutFragment"
-        android:name="com.example.trainingdiary.AddWorkoutFragment"
+        android:name="com.example.trainingdiary.ui.add_workout_fragment.AddWorkoutFragment"
         android:label="fragment_add_workout"
         tools:layout="@layout/fragment_add_workout" />
     <fragment
         android:id="@+id/setBodyParams"
-        android:name="com.example.trainingdiary.SetBodyParams"
-        android:label="fragment_set_body_params"
-        tools:layout="@layout/fragment_set_body_params" />
+        android:name="com.example.trainingdiary.ui.set_body_params_fragment.SetBodyParamsFragment"
+        android:label="Добавить замеры"
+        tools:layout="@layout/fragment_set_body_params" >
+        <action
+            android:id="@+id/action_setBodyParams_to_navigation_results"
+            app:destination="@id/navigation_results"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
 </navigation>
