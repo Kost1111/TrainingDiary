@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.toColorLong
+import androidx.fragment.app.FragmentTransaction
 import com.example.trainingdiary.ui.bottom_sheet_fragment.BottomSheetFragment
 import com.example.trainingdiary.databinding.FragmentHomeBinding
 import com.example.trainingdiary.ui.base_fragment.BaseFragment
@@ -21,6 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     + (month + 1) + "-" + year)
             val bundle = Bundle()
             bundle.putString("addWorkout",date)
+            BottomSheetFragment().arguments?.putString("addWorkout",date)
             BottomSheetFragment().show(requireFragmentManager(), "tag")
         }
     }

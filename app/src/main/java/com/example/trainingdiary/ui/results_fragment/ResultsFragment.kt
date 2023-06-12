@@ -39,18 +39,19 @@ class ResultsFragment : BaseFragment<FragmentResultsBinding>() {
     @SuppressLint("UseRequireInsteadOfGet")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val json = sharedPreferencesBodyParcelable.getString(KEY_BODY, null)
-        val height = sharedPreferencesHeight.getString(KEY_HEIGHT, "---")
-        val weight = sharedPreferencesWeight.getString(KEY_WEIGHT, "---")
+        val height = sharedPreferencesHeight.getFloat(KEY_HEIGHT, 0f)
+        val weight = sharedPreferencesWeight.getFloat(KEY_WEIGHT, 0f)
         binding.apply {
-            tvHeight.text = height
-            tvWeight.text = weight
-            tvFat.text = checkFat(weight!!.toDouble(), height!!.toDouble())
+            tvHeight.text = height.toString()
+            tvWeight.text = weight.toString()
+            tvFat.text = checkFat(weight, height)
             setRulerParams.setOnClickListener {
                 Navigation.findNavController(binding.root)
                     .navigate(R.id.action_navigation_results_to_setBodyParams)
             }
             setWeightParams.setOnClickListener {
                 DialogFragment.newInstance().show(fragmentManager!!, DialogFragment.TAG)
+
             }
         }
         val bodySavedParams = Gson().fromJson(json, BodyParcelable::class.java)
@@ -59,13 +60,17 @@ class ResultsFragment : BaseFragment<FragmentResultsBinding>() {
 
     override fun onStart() {
         super.onStart()
-        binding.tvHeight.text = sharedPreferencesHeight.getString(KEY_HEIGHT, "---")
-        binding.tvWeight.text = sharedPreferencesWeight.getString(KEY_WEIGHT, "---")
+        binding.tvHeight.text = sharedPreferencesHeight.getFloat(KEY_HEIGHT, 0f).toString()
+        binding.tvWeight.text = sharedPreferencesWeight.getFloat(KEY_WEIGHT, 0f).toString()
     }
 
-    private fun checkFat(weight: Double, height: Double): String {
-        val result = weight / (height * height) * 10000
-        return "$result"
+    private fun checkFat(weight: Float, height: Float): String {
+        return if (weight == 0f || height == 0f) {
+            "---"
+        } else {
+            val result = weight / (height * height) * 10000
+            "$result"
+        }
     }
 
     @SuppressLint("SetTextI18n")

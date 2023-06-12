@@ -32,8 +32,12 @@
     <fragment
         android:id="@+id/navigation_exercises"
         android:name="com.example.trainingdiary.ui.exercises_fragment.ExercisesFragment"
-        android:label="Упражнения"
-        tools:layout="@layout/fragment_exercises" />
+        android:label="Мои упражнения"
+        tools:layout="@layout/fragment_exercises" >
+        <action
+            android:id="@+id/action_navigation_exercises_to_addNewExercisesFragment"
+            app:destination="@id/addNewExercisesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addWorkoutFragment"
         android:name="com.example.trainingdiary.ui.add_workout_fragment.AddWorkoutFragment"
@@ -49,5 +53,14 @@
             app:destination="@id/navigation_results"
             app:enterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewExercisesFragment"
+        android:name="com.example.trainingdiary.ui.add_new_exercises_fragment.AddNewExercisesFragment"
+        android:label="Добавить упражнение"
+        tools:layout="@layout/fragment_add_new_exercises" >
+        <action
+            android:id="@+id/action_addNewExercisesFragment_to_navigation_exercises"
+            app:destination="@id/navigation_exercises" />
     </fragment>
 </navigation>

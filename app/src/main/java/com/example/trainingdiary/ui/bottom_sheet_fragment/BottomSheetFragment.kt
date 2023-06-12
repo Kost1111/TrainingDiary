@@ -26,6 +26,8 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
     override fun onStart() {
         super.onStart()
+        val data = arguments?.getString("addWorkout")
+        binding.simpleText.text = data
         val density = requireContext().resources.displayMetrics.density
         dialog?.let {
             val bottomSheet =

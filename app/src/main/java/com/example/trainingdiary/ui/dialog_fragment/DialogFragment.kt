@@ -57,16 +57,19 @@ class DialogFragment : DialogFragment() {
     @SuppressLint("CommitPrefEdits")
     private fun setupClickListeners() {
         binding.btnPositive.setOnClickListener {
-            val weight = binding.editTextWeight.text.toString()
-            val height = binding.editTextHeight.text.toString()
-            sharedPreferencesHeight.edit().putString(KEY_HEIGHT, weight).apply()
-            sharedPreferencesWeight.edit().putString(KEY_WEIGHT, height).apply()
+            val weight = binding.editTextWeight.text.toString().toFloat()
+            val height = binding.editTextHeight.text.toString().toFloat()
+            sharedPreferencesHeight.edit().putFloat(KEY_HEIGHT, weight).apply()
+            sharedPreferencesWeight.edit().putFloat(KEY_WEIGHT, height).apply()
+            val bundle = Bundle()
+            bundle.putFloat(KEY_HEIGHT, weight)
+            bundle.putFloat(KEY_WEIGHT, height)
+            arguments = bundle
             dismiss()
         }
         binding.btnNegative.setOnClickListener {
             dismiss()
         }
-
     }
 
     companion object {
