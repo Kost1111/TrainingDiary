@@ -38,7 +38,7 @@ class AdapterExercises :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExercisesVieHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater.inflate(R.layout.recyclerview_item, parent, false)
+        val view = layoutInflater.inflate(R.layout.recyclerview_all_exercises_item, parent, false)
         return ExercisesVieHolder(view = view)
     }
 
