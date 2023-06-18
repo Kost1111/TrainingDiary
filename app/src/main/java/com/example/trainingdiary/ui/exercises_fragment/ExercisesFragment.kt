@@ -4,26 +4,31 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trainingdiary.R
-import com.example.trainingdiary.data.Exercises
 import com.example.trainingdiary.databinding.FragmentExercisesBinding
 import com.example.trainingdiary.ui.base_fragment.BaseFragment
-import com.example.trainingdiary.ui.exercises_adapter.AdapterExercises
-import com.example.trainingdiary.utils.usersExercises
+import com.example.trainingdiary.ui.custom_exercise_adapter.CustomExerciseAdapter
+import com.example.trainingdiary.utils.listItem
 
 
 class ExercisesFragment : BaseFragment<FragmentExercisesBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) ->
     FragmentExercisesBinding =
         FragmentExercisesBinding::inflate
+    var liveDataListItems = MutableLiveData(listItem)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         checkPlaceholder()
-        val adapter = AdapterExercises()
-        adapter.submitList(usersExercises.toList())
+        val adapter = CustomExerciseAdapter()
+        liveDataListItems.observe(viewLifecycleOwner) {
+            it.let {
+                adapter.submitList(it)
+            }
+        }
         binding.recyclerViewUsersExercises.adapter = adapter
         binding.recyclerViewUsersExercises.layoutManager = LinearLayoutManager(requireContext())
         binding.btnMoreExercises.setOnClickListener {
@@ -37,7 +42,7 @@ class ExercisesFragment : BaseFragment<FragmentExercisesBinding>() {
     }
 
     private fun checkPlaceholder() {
-        if (usersExercises.isEmpty()) {
+        if (listItem.isEmpty()) {
             binding.placeholder.visibility = View.VISIBLE
             binding.usersExercises.visibility = View.INVISIBLE
         } else {
