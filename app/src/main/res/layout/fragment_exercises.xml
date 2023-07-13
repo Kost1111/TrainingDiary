@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.exercises_fragment.ExercisesFragment">
+    tools:context=".ui.fragments.exercises.ExercisesFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/usersExercises"
@@ -41,7 +41,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/searchViewAllExercises"
-            tools:listitem="@layout/recyclerview_all_exercises_item" />
+            tools:listitem="@layout/recyclerview_custom_exercises" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

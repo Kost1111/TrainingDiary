@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.add_new_exercises_fragment.AddNewExercisesFragment">
+    tools:context=".ui.fragments.add_new_exercises.AddNewExercisesFragment">
 
     <EditText
         android:id="@+id/searchViewAllExercises"
@@ -13,7 +13,7 @@
         android:layout_margin="8dp"
         android:drawableStart="@drawable/search"
         android:drawablePadding="8dp"
-        android:hint="Найти упражнение..."
+        android:hint="@string/search"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

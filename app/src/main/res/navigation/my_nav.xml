@@ -6,16 +6,19 @@
     app:startDestination="@+id/navigation_home">
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.trainingdiary.ui.home_fragment.HomeFragment"
+        android:name="com.example.trainingdiary.ui.fragments.home.HomeFragment"
         android:label="Дневник"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_addWorkoutFragment"
             app:destination="@id/addWorkoutFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_bottomSheetFragment"
+            app:destination="@id/bottomSheetFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_results"
-        android:name="com.example.trainingdiary.ui.results_fragment.ResultsFragment"
+        android:name="com.example.trainingdiary.ui.fragments.results.ResultsFragment"
         android:label="Результаты"
         tools:layout="@layout/fragment_results" >
         <action
@@ -23,29 +26,35 @@
             app:destination="@id/setBodyParams"
             app:enterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_navigation_results_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.trainingdiary.ui.settings_fragment.SettingsFragment"
+        android:name="com.example.trainingdiary.ui.fragments.settings.SettingsFragment"
         android:label="Настройки"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/navigation_exercises"
-        android:name="com.example.trainingdiary.ui.exercises_fragment.ExercisesFragment"
+        android:name="com.example.trainingdiary.ui.fragments.exercises.ExercisesFragment"
         android:label="Мои упражнения"
         tools:layout="@layout/fragment_exercises" >
         <action
             android:id="@+id/action_navigation_exercises_to_addNewExercisesFragment"
             app:destination="@id/addNewExercisesFragment" />
+        <action
+            android:id="@+id/action_navigation_exercises_to_infoAboutExercises"
+            app:destination="@id/infoAboutExercises" />
     </fragment>
     <fragment
         android:id="@+id/addWorkoutFragment"
-        android:name="com.example.trainingdiary.ui.add_workout_fragment.AddWorkoutFragment"
+        android:name="com.example.trainingdiary.ui.fragments.add_workout.AddWorkoutFragment"
         android:label="fragment_add_workout"
         tools:layout="@layout/fragment_add_workout" />
     <fragment
         android:id="@+id/setBodyParams"
-        android:name="com.example.trainingdiary.ui.set_body_params_fragment.SetBodyParamsFragment"
+        android:name="com.example.trainingdiary.ui.fragments.set_body_params.SetBodyParamsFragment"
         android:label="Добавить замеры"
         tools:layout="@layout/fragment_set_body_params" >
         <action
@@ -56,11 +65,28 @@
     </fragment>
     <fragment
         android:id="@+id/addNewExercisesFragment"
-        android:name="com.example.trainingdiary.ui.add_new_exercises_fragment.AddNewExercisesFragment"
+        android:name="com.example.trainingdiary.ui.fragments.add_new_exercises.AddNewExercisesFragment"
         android:label="Добавить упражнение"
         tools:layout="@layout/fragment_add_new_exercises" >
         <action
             android:id="@+id/action_addNewExercisesFragment_to_navigation_exercises"
             app:destination="@id/navigation_exercises" />
     </fragment>
+    <dialog
+        android:id="@+id/dialogFragment"
+        android:name="com.example.trainingdiary.ui.fragments.dialog.AddParamsDialogFragment"
+        android:label="DialogFragment" >
+        <action
+            android:id="@+id/action_dialogFragment_to_navigation_results"
+            app:destination="@id/navigation_results" />
+    </dialog>
+    <dialog
+        android:id="@+id/bottomSheetFragment"
+        android:name="com.example.trainingdiary.ui.fragments.bottom_sheet.BottomSheetFragment"
+        android:label="BottomSheetFragment" />
+    <fragment
+        android:id="@+id/infoAboutExercises"
+        android:name="com.example.trainingdiary.ui.fragments.info_about_exercises.InfoAboutExercises"
+        android:label="fragment_info_about_exercises"
+        tools:layout="@layout/fragment_info_about_exercises" />
 </navigation>

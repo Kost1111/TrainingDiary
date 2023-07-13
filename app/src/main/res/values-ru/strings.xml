@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">TrainingDiary</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="scales">Весы</string>
+    <string name="space">---</string>
+    <string name="weight">Вес</string>
+    <string name="height">Рост</string>
+    <string name="fatPercentage">Процент жира</string>
+    <string name="record">Записать</string>
+    <string name="Measurements">Замеры</string>
+    <string name="neck">Шея</string>
+    <string name="back">Спина</string>
+    <string name="chest">Грудь</string>
+    <string name="waist">Талия</string>
+    <string name="belly">Живот</string>
+    <string name="forearm">Предплечье</string>
+    <string name="measure">Измерить</string>
+    <string name="statistics">Статистика</string>
+    <string name="trainingWeeks">Тренировочные недели</string>
+    <string name="trainingDays">Тренировочные дни</string>
+    <string name="trainingHours">Тренировочные часы</string>
+    <string name="trainings">Тренировки</string>
+    <string name="volume">Объем, кг</string>
+    <string name="search">Поиск...</string>
+</resources>

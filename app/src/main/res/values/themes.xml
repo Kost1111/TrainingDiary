@@ -37,5 +37,12 @@
         <item name="android:background">@drawable/bottom_sheet_background</item>
     </style>
 
+    <style name="bottomStyle">
+        <item name="android:layout_margin">8dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="cornerRadius">20dp</item>
+    </style>
+
 
 </resources>
