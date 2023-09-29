@@ -94,7 +94,6 @@ class AddNewExercisesFragment : BaseFragment<FragmentAddNewExercisesBinding>() {
             ) {
                 exercisesList.add(i)
             }
-            // дописать фрагмент "добавить упражнение"
         }
         adapter.submitList(exercisesList.toList())
     }

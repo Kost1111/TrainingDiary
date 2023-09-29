@@ -44,8 +44,6 @@ class CustomExerciseAdapter :
             binding.recyclerViewCustomExercises.layoutManager =
                 LinearLayoutManager(itemView.context)
         }
-
-
     }
 
 
