@@ -1,6 +1,7 @@
 package com.example.trainingdiary.ui.fragments.exercises
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,6 +40,7 @@ class ExercisesFragment : BaseFragment<FragmentExercisesBinding>() {
                 .onEach(::render)
                 .launchWhenStarted(lifecycleScope)
         }
+
         val adapter = CustomExerciseAdapter()
         liveDataListItems.observe(viewLifecycleOwner) {
             it.let {

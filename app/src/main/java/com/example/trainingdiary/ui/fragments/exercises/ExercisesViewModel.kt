@@ -10,12 +10,8 @@ class ExercisesViewModel : ViewModel() {
     private val _exercisesViewState = MutableStateFlow<ExercisesViewState>(ExercisesViewState.None)
     val exercisesViewState = _exercisesViewState.asStateFlow()
 
-    override fun onCleared() {
-        super.onCleared()
-    }
-
     fun checkPlaceHolder() {
-        when(listItem.size){
+        when (listItem.size) {
             0 -> _exercisesViewState.value = ExercisesViewState.NoExercises
 
             else -> _exercisesViewState.value = ExercisesViewState.ContainsExercises
